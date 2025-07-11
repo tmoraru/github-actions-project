@@ -17,6 +17,6 @@ jobs:
                  exit "I will succeed"
                  exit 1
              - name: Say goodbye
-               run: echo "GoodBye"
+               run: echo "GoodBye" #2nd job
 
              

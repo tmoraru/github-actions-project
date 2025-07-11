@@ -1,0 +1,11 @@
+name: 2 - Worflow Events
+
+on: push
+
+    job: 
+        echo:
+            runs-on: ubuntu-latest
+            steps: 
+                - name: Show the trigger
+                  run: echo "type of the name"
+

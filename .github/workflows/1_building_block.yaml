@@ -1,6 +1,6 @@
 name: 01 - Building Blocks 
 
-on: push 
+on: workflow_dispatch #will not push everytime from this file 
 
 jobs: 
     echo-hello:

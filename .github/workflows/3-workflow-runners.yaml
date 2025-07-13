@@ -1,6 +1,6 @@
 name: Workflow Runners
 
-on: push 
+on: workflow_dispatch #to not be pushed on the next action 
 
 jobs: 
     ubuntu-echo:

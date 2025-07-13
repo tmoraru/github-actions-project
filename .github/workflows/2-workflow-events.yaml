@@ -1,11 +1,8 @@
 name: 2 - Worflow Events
 
 on: 
-    push:
-    pull_request:
-    schedule:
-        - cron: '*/5 0 * * *' #run every 5 min
-    workflow_dispatch:     #enable to trigger from the UI
+  pull_request:
+  workflow_dispatch:     #enable to trigger from the UI
 
 
 jobs: 

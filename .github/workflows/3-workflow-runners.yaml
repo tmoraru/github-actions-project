@@ -10,7 +10,19 @@ jobs:
             - name: Show OS
               run: |   #will have multiply line that has to execute
                 echo "This job is running on Ubuntu runner."
+                echo "Runner OS: $RUNNER_OS " 
+    
+    windows-echo:
+        runs-on: windows-latest
+
+        steps:
+            - name: Show OS
+              shell: bash #inform the GitHub Actions that my scripts need to exec
+              run: |
+                echo "This job is running on the Windows runner"
                 echo "Runner OS: $RUNNER_OS "
+
+
 
 
 

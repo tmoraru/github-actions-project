@@ -1,6 +1,6 @@
 name: Use Actions
 
-on: push
+on: workflow_dispatch 
 
 jobs:
     build:
@@ -10,7 +10,7 @@ jobs:
                 working-directory: 4-use-actions/react-app  #setup the default directory and not be included in another part of the shell (directory)
 
         
-        steps: 
+        steps:  #encounter workflow 
             - name: Checkout Code
               uses: actions/checkout@v4
 

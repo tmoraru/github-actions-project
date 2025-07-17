@@ -1,0 +1,38 @@
+name: 8 - Using variables
+
+on: 
+    push:
+    workflow_dispatch:
+
+env: 
+    WORKFLOW_VAR: "i'M A workflow env" #Available at the workflow level
+    OVERWRITTEN: "I'll be overwritten at the worklfow level"
+jobs: 
+    echo:
+        runs-on: ubuntu-latest
+
+        env:
+            JOB_VAR: "i'M a job env" #available only at the job level
+            OVERWRITTEN: "i'VE BEEN OVERWRITTEN AT THE job level"
+        steps:
+          - name: Prinv Env Variables
+            env: 
+              STEP_VAR: "I am a step var"
+              step-var2: " I'm another step var"
+
+            run: |
+                echo "Step env var: ${{env.STEP_VAR}}"
+                echo " Step env var2: $step-var2 "
+                echo " Job env var: ${{env.JOB_VAR}}"
+                echo " Workflow env var: ${{env.WORKFLOW_VAR}}"
+ 
+          - name: Overwrite job variable
+            env: 
+                OVERWRITTEN: "I've been overwritten at the step level"
+            run: |
+                 ehco "Step env var: ${{env.OVERWRITTEN}}"
+             
+
+
+
+

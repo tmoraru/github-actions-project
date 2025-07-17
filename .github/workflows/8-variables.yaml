@@ -31,7 +31,7 @@ jobs:
             env: 
                 OVERWRITTEN: "I've been overwritten at the step level"
             run: |
-                 ehco "Step env var: ${{env.OVERWRITTEN}}"
+                 echo "Step env var: ${{env.OVERWRITTEN}}"
              
 
 

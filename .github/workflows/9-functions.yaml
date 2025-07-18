@@ -17,7 +17,9 @@ jobs:
               ${{toJSON(github.event.pull_request.labels)}}
               EOF
               
-              
+          - name: Test
+            if: {{ !cancelled()}}
+            run: echo "test"
           - name: Bug step
             if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix')}}
             run: echo "I am a bug fix"

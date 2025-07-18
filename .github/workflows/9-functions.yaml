@@ -8,6 +8,19 @@ jobs:
     echo1:
         runs-on: ubuntu-latest
         steps:
+# Retrieve some info from our pull-request in order to perform some checks in our workflow
+          - name: Prin PR title
+            run: echo "${{ github.event.pull_request.title}}"
+          - name: Prin PR labels
+            run: |
+              cat: << EOF 
+              ${{toJSON(github.event.pull_request.labels)}}
+              EOF
+              
+              
+          - name: Bug step
+            if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix')}}
+            run: echo "I am a bug fix"
           - name: Sleep for 20 seconds
             run: sleep 20
           - name: Failing step

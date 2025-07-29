@@ -21,7 +21,9 @@ jobs:
 
             - name: Build
               id: build
-              run: echo "status=success" >> "$GITHUB_OUTPUT"
+              run: | 
+                echo "$GITHUB_OUTPUT"
+                echo "status=success" >> "$GITHUB_OUTPUT"
 
     deploy: 
         runs-on: ubuntu-latest

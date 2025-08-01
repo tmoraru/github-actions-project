@@ -2,7 +2,7 @@ name: Using functions
 
 on: 
     #pull_request: 
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
     echo1:

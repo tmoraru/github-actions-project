@@ -33,11 +33,20 @@ jobs:
           run: npm run test
         - name: Build code
           run: npm run build
-          
-
-
-
-          
+        - name: Upload build files
+          run: actions/upload-artifact@v3
+          with: 
+            name: app
+            path: artifact/react-app/build
 
   deploy:
     runs-on: ubuntu-latest
+    steps:
+        - name: Doawnload build artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: app
+            path: build
+        - name: Show folder structure
+          run: ls -R
+          
